@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FinAlly — AI Trading Workstation
 
 A visually stunning AI-powered trading workstation that streams live market data, simulates portfolio trading, and integrates an LLM chat assistant that can analyze positions and execute trades via natural language.
@@ -60,3 +61,7 @@ finally/
 ## License
 
 See [LICENSE](LICENSE).
+=======
+# finally
+Last Ed Donner class 
+>>>>>>> e0d43bd779377d46a589c470882e1d0fccc05235
