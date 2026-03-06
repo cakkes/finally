@@ -1,3 +1,11 @@
+# FinAlly project
+db/finally.db
+db/*.db
+frontend/.next/
+frontend/out/
+frontend/node_modules/
+node_modules/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

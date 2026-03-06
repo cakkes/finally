@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    environment:
+      - LLM_MOCK=true
+      - DB_PATH=/app/db/finally.db
+    volumes:
+      - test-data:/app/db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.49.0-noble
+    working_dir: /tests
+    volumes:
+      - ../test:/tests
+    environment:
+      - BASE_URL=http://app:8000
+    depends_on:
+      app:
+        condition: service_healthy
+    command: npx playwright test
+
+volumes:
+  test-data:
